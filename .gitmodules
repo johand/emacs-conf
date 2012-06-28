@@ -1,0 +1,42 @@
+[submodule "auto-complete"]
+	path = auto-complete
+	url = git://github.com/m2ym/auto-complete.git
+[submodule "flymake-php"]
+	path = flymake-php
+	url = git://github.com/purcell/flymake-php.git
+[submodule "flymake-ruby"]
+	path = flymake-ruby
+	url = git://github.com/purcell/flymake-ruby.git
+[submodule "identica-mode"]
+	path = identica-mode
+	url = git://git.sv.gnu.org/identica-mode.git
+[submodule "magit"]
+	path = magit
+	url = git://github.com/magit/magit.git
+[submodule "php-mode"]
+	path = php-mode
+	url = git://github.com/ejmr/php-mode.git
+[submodule "popup-el"]
+	path = popup-el
+	url = git://github.com/m2ym/popup-el.git
+[submodule "rhtml"]
+	path = rhtml
+	url = git://github.com/eschulte/rhtml.git
+[submodule "rinari"]
+	path = rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "scss-mode"]
+	path = scss-mode
+	url = git://github.com/antonj/scss-mode.git
+[submodule "textmate.el"]
+	path = textmate.el
+	url = git://github.com/defunkt/textmate.el.git
+[submodule "twittering-mode"]
+	path = twittering-mode
+	url = git://github.com/hayamiz/twittering-mode.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "emacs.d/themes/zen-and-art-theme"]
+	path = emacs.d/themes/zen-and-art-theme
+	url = git://github.com/johand/zen-and-art-theme.git
