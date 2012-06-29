@@ -1,4 +1,4 @@
-### Instalacion
+## Instalacion
 
 **clonar repositorio**
 
