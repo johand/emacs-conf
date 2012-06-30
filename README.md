@@ -2,7 +2,7 @@
 
 **clonar repositorio**
 
-<code>git://github.com/johand/emacs-conf.git</code>
+<code>git clone git://github.com/johand/emacs-conf.git</code>
 
 
 **instalar submodulos**
