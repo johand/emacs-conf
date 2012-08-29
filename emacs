@@ -104,18 +104,24 @@
 (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
 (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
+;;smex
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+(global-set-key (kbd "M-x") 'smex)
+
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zen-and-art-theme")
+
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (zen-and-art)))
- '(custom-safe-themes (quote ("648ef38f7a6e5cef4a04f529b6bc66834447905b46aa5828089ef88327209d01" default))))
+ '(custom-safe-themes (quote ("648ef38f7a6e5cef4a04f529b6bc66834447905b46aa5828089ef88327209d01" default)))
+ '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
+
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+ 
  )
+
+(define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)

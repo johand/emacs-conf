@@ -1,0 +1,42 @@
+[submodule "emacs.d/auto-complete"]
+	path = emacs.d/auto-complete
+	url = git://github.com/m2ym/auto-complete.git
+[submodule "emacs.d/flymake-php"]
+	path = emacs.d/flymake-php
+	url = git://github.com/purcell/flymake-php.git
+[submodule "emacs.d/flymake-ruby"]
+	path = emacs.d/flymake-ruby
+	url = git://github.com/purcell/flymake-ruby.git
+[submodule "emacs.d/identica-mode"]
+	path = emacs.d/identica-mode
+	url = http://git.savannah.gnu.org/cgit/identica-mode.git
+[submodule "emacs.d/magit"]
+	path = emacs.d/magit
+	url = git://github.com/magit/magit.git
+[submodule "emacs.d/php-mode"]
+	path = emacs.d/php-mode
+	url = git://github.com/ejmr/php-mode.git
+[submodule "emacs.d/popup-el"]
+	path = emacs.d/popup-el
+	url = git://github.com/m2ym/popup-el.git
+[submodule "emacs.d/rhtml"]
+	path = emacs.d/rhtml
+	url = git://github.com/eschulte/rhtml.git
+[submodule "emacs.d/rinari"]
+	path = emacs.d/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "emacs.d/scss-mode"]
+	path = emacs.d/scss-mode
+	url = git://github.com/antonj/scss-mode.git
+[submodule "emacs.d/textmate.el"]
+	path = emacs.d/textmate.el
+	url = git://github.com/defunkt/textmate.el.git
+[submodule "emacs.d/themes/zen-and-art-theme"]
+	path = emacs.d/themes/zen-and-art-theme
+	url = git://github.com/johand/zen-and-art-theme.git
+[submodule "emacs.d/twittering-mode"]
+	path = emacs.d/twittering-mode
+	url = git://github.com/hayamiz/twittering-mode.git
+[submodule "emacs.d/yasnippet"]
+	path = emacs.d/yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
