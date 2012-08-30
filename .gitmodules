@@ -1,6 +1,3 @@
-[submodule "emacs.d/auto-complete"]
-	path = emacs.d/auto-complete
-	url = git://github.com/m2ym/auto-complete.git
 [submodule "emacs.d/flymake-php"]
 	path = emacs.d/flymake-php
 	url = git://github.com/purcell/flymake-php.git
