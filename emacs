@@ -1,16 +1,18 @@
 ;;; identica
 (add-to-list 'load-path "~/.emacs.d/identica-mode")
-(require 'identica-mode)
+(autoload 'identica "identica-mode" nil t)
 
 ;;; twitter
 (add-to-list 'load-path "~/.emacs.d/twittering-mode")
-(require 'twittering-mode)
+(autoload 'twit "twittering-mode" nil t)
 (setq twittering-icon-mode t)
 (setq twittering-timer-interval 120)
 
 ;;; php-mode
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
-(require 'php-mode)
+(autoload 'php-mode "php-mode" t)
+(add-to-list 'auto-mode-alist
+	          '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
 
 ;;; flymake-php
 (add-to-list 'load-path "~/.emacs.d/flymake-php")
@@ -107,6 +109,10 @@
 ;;smex
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (global-set-key (kbd "M-x") 'smex)
+
+;;; autopair
+(require 'autopair)
+(autopair-global-mode)
 
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zen-and-art-theme")
