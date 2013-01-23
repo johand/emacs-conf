@@ -3,20 +3,16 @@
 
 **clonar repositorio**
 
-<code>git clone git://github.com/johand/emacs-conf.git</code>
+    git clone git://github.com/johand/emacs-conf.git
 
+**crear enlaces simbolicos**
 
-**crear enlace simbolico y copiar fichero**
+    ln -s emacs-conf/emacs.d ~/.emacs.d
 
-<code>ln -s emacs-conf/emacs.d ~/.emacs.d</code>
-
-<code>cd emacs-conf</code>
-
-<code>cp emacs ~/.emacs</code>
-
+    ln -s emacs ~/.emacs
 
 **instalar y actualizar submodulos**
 
-<code>git submodule update --init --recursive</code>
+    git submodule update --init --recursive
 
-<code>git submodule foreach git pull origin master</code>
+    git submodule foreach git pull origin master
