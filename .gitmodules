@@ -40,3 +40,6 @@
 [submodule "emacs.d/yasnippet"]
 	path = emacs.d/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "emacs.d/flymake-easy"]
+	path = emacs.d/flymake-easy
+	url = git://github.com/purcell/flymake-easy.git

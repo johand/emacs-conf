@@ -14,6 +14,15 @@
 (add-to-list 'auto-mode-alist
 	          '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
 
+;; flymake-easy
+(add-to-list 'load-path "~/.emacs.d/flymake-easy")
+(require 'flymake-easy)
+
+;; flymake-ruby
+(add-to-list 'load-path "~/.emacs.d/flymake-ruby")
+(require 'flymake-ruby) 
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+
 ;;; flymake-php
 (add-to-list 'load-path "~/.emacs.d/flymake-php")
 (require 'flymake-php) 
@@ -56,7 +65,6 @@
  'file "\\.\\(ebuild\\|eclass\\|eblit\\|eselect\\)\\'" 'utf-8)
 (setq ebuild-mode-portdir "@PORTDIR@")
 
-
 ;;; magit
 (add-to-list 'load-path "~/.emacs.d/magit")
 (require 'magit)
@@ -78,18 +86,10 @@
 (add-to-list 'load-path "~/.emacs.d/rhtml")
 (require 'rhtml-mode)
 
-;;; elpa
-(add-to-list 'load-path "~/.emacs.d/elpa")
-
 ;;; marmalade
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
-
-;; flymake-ruby
-(add-to-list 'load-path "~/.emacs.d/flymake-ruby")
-(require 'flymake-ruby) 
-(add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 ;;ruby-block
 (require 'ruby-block)
