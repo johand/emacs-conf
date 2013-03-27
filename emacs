@@ -14,11 +14,11 @@
 (add-to-list 'auto-mode-alist
 	          '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
 
-;; flymake-easy
+;;; flymake-easy
 (add-to-list 'load-path "~/.emacs.d/flymake-easy")
 (require 'flymake-easy)
 
-;; flymake-ruby
+;;; flymake-ruby
 (add-to-list 'load-path "~/.emacs.d/flymake-ruby")
 (require 'flymake-ruby) 
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
@@ -46,6 +46,48 @@
 (require 'textmate)
 (textmate-mode)
 
+;;; magit
+(add-to-list 'load-path "~/.emacs.d/magit")
+(require 'magit)
+
+;;; scss-mode
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/scss-mode"))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+;;; rinari
+(add-to-list 'load-path "~/.emacs.d/rinari")
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+(require 'rinari)
+
+;;; rhtml-mode
+(add-to-list 'load-path "~/.emacs.d/rhtml")
+(require 'rhtml-mode)
+
+;;; marmalade
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;;; smex
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+(global-set-key (kbd "M-x") 'smex)
+
+;;; ruby-block
+(require 'ruby-block)
+(ruby-block-mode t)
+
+;;; ruby-end
+(require 'ruby-end)
+
+;;; autopair
+(require 'autopair)
+(autopair-global-mode)
+
+;;; yaml-mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;;; gentoo-syntax
 (add-to-list 'load-path "/usr/portage/app-emacs/gentoo-syntax/files")
 (autoload 'ebuild-mode "gentoo-syntax"
@@ -65,56 +107,15 @@
  'file "\\.\\(ebuild\\|eclass\\|eblit\\|eselect\\)\\'" 'utf-8)
 (setq ebuild-mode-portdir "@PORTDIR@")
 
-;;; magit
-(add-to-list 'load-path "~/.emacs.d/magit")
-(require 'magit)
+;;; setting rbenv path
+(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
 ;;; browser
 ;(setq browse-url-browser-function 'browse-url-generic
    ; browse-url-generic-program "foo")
 
-;;; scss-mode
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/scss-mode"))
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-
-;;; rinari
-(add-to-list 'load-path "~/.emacs.d/rinari")
-(require 'rinari)
-
-;;; rhtml-mode
-(add-to-list 'load-path "~/.emacs.d/rhtml")
-(require 'rhtml-mode)
-
-;;; marmalade
-(require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
-
-;;ruby-block
-(require 'ruby-block)
-(ruby-block-mode t)
-
-;;ruby-end
-(require 'ruby-end)
-
-;;yaml-mode
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
-;; setting rbenv path
-(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
-(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
-
-;;smex
-(setq smex-save-file (concat user-emacs-directory ".smex-items"))
-(global-set-key (kbd "M-x") 'smex)
-
-;;; autopair
-(require 'autopair)
-(autopair-global-mode)
-
-;; theme
+;;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zen-and-art-theme")
 
 (custom-set-variables
