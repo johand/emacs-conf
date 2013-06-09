@@ -28,9 +28,6 @@
 [submodule "emacs.d/scss-mode"]
 	path = emacs.d/scss-mode
 	url = git://github.com/antonj/scss-mode.git
-[submodule "emacs.d/textmate.el"]
-	path = emacs.d/textmate.el
-	url = git://github.com/defunkt/textmate.el.git
 [submodule "emacs.d/themes/zen-and-art-theme"]
 	path = emacs.d/themes/zen-and-art-theme
 	url = git://github.com/johand/zen-and-art-theme.git

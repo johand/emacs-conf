@@ -41,11 +41,6 @@
 (setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets" "~/.emacs.d/yasnippet/extras/imported"))
 (yas/global-mode 1) 
 
-;;; textmate
-(add-to-list 'load-path "~/.emacs.d/textmate.el")
-(require 'textmate)
-(textmate-mode)
-
 ;;; magit
 (add-to-list 'load-path "~/.emacs.d/magit")
 (require 'magit)
