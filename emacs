@@ -59,6 +59,14 @@
 (add-to-list 'load-path "~/.emacs.d/rhtml")
 (require 'rhtml-mode)
 
+;;; projectile
+(add-to-list 'load-path "~/.emacs.d/projectile")
+(add-to-list 'load-path "~/.emacs.d/dash.el")
+(add-to-list 'load-path "~/.emacs.d/s.el")
+(require 'projectile)
+(add-hook 'ruby-mode-hook #'(lambda () (projectile-mode)))
+(add-hook 'php-mode-hook #'(lambda () (projectile-mode)))
+
 ;;; marmalade
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
