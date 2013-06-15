@@ -80,6 +80,9 @@
 	  ("<down>"  . ignore             ))))
 (add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
 
+;;; dictionary
+(setq ispell-dictionary "castellano")
+
 ;;; marmalade
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
