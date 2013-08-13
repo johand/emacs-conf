@@ -8,7 +8,7 @@
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
 (autoload 'php-mode "php-mode" t)
 (add-to-list 'auto-mode-alist
-	          '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
+	          '("\\.php[45]?\\'\\|\\.phtml\\'" . php-mode))
 
 ;;; flymake-easy
 (add-to-list 'load-path "~/.emacs.d/flymake-easy")
