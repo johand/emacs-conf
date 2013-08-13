@@ -99,7 +99,7 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
-;;; ebuild-syntax
+;;; ebuild-mode
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/ebuild-mode")
 (autoload 'ebuild-mode "ebuild-mode"
   "Major mode for Portage .ebuild and .eclass files." t)
