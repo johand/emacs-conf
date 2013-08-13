@@ -63,18 +63,14 @@
 (add-hook 'ruby-mode-hook #'(lambda () (projectile-mode)))
 (add-hook 'php-mode-hook #'(lambda () (projectile-mode)))
 
-;;; iswitchb
-(iswitchb-mode 1)
-(setq iswitchb-buffer-ignore '("^ " "*scratch" "*Messages" "*Completions" "*tw"))
-(defun iswitchb-local-keys ()
-  (mapc (lambda (K) 
-	  (let* ((key (car K)) (fun (cdr K)))
-	    (define-key iswitchb-mode-map (edmacro-parse-keys key) fun)))
-	'(("<right>" . iswitchb-next-match)
-	  ("<left>"  . iswitchb-prev-match)
-	  ("<up>"    . ignore             )
-	  ("<down>"  . ignore             ))))
-(add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
+;;; ido-mode
+(require 'ido) 
+(ido-mode 'both)
+(setq 
+ ido-ignore-buffers '("^ " "*scra" "*Mess" "*Compl" "*Hel")
+ ido-ignore-files '("^ " "#" "Gemfile.lock" "README.rdoc" "ac-comph")
+ ido-max-prospects 8
+ ido-enable-flex-matching t)
 
 ;;; dictionary
 (setq ispell-dictionary "castellano")
