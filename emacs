@@ -1,7 +1,3 @@
-;;; identica
-(add-to-list 'load-path "~/.emacs.d/identica-mode")
-(autoload 'identica "identica-mode" nil t)
-
 ;;; twitter
 (add-to-list 'load-path "~/.emacs.d/twittering-mode")
 (autoload 'twit "twittering-mode" nil t)

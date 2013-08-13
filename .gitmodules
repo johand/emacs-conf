@@ -7,9 +7,6 @@
 [submodule "emacs.d/flymake-ruby"]
 	path = emacs.d/flymake-ruby
 	url = git://github.com/purcell/flymake-ruby.git
-[submodule "emacs.d/identica-mode"]
-	path = emacs.d/identica-mode
-	url = http://git.savannah.gnu.org/cgit/identica-mode.git
 [submodule "emacs.d/magit"]
 	path = emacs.d/magit
 	url = git://github.com/magit/magit.git
