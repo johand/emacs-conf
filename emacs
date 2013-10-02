@@ -39,6 +39,7 @@
 
 ;;; magit
 (add-to-list 'load-path "~/.emacs.d/magit")
+(add-to-list 'load-path "~/.emacs.d/git-modes")
 (require 'magit)
 
 ;;; scss-mode
