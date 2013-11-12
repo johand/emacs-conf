@@ -125,10 +125,9 @@
 
 ;;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zen-and-art-theme")
+(load-theme 'zen-and-art t)
 
 (custom-set-variables
- '(custom-enabled-themes (quote (zen-and-art)))
- '(custom-safe-themes (quote ("648ef38f7a6e5cef4a04f529b6bc66834447905b46aa5828089ef88327209d01" default)))
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
