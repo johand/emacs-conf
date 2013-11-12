@@ -85,6 +85,9 @@
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (global-set-key (kbd "M-x") 'smex)
 
+;;; ruby indent
+(define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+
 ;;; ruby-block
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -134,8 +137,3 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
-(custom-set-faces
- 
- )
-
-(define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
