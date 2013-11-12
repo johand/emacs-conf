@@ -103,6 +103,12 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
+;;; rbenv.el
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/rbenv.el/"))
+(setq rbenv-modeline-function 'rbenv--modeline-plain)
+(require 'rbenv)
+(add-hook 'ruby-mode-hook #'(lambda () (global-rbenv-mode)))
+
 ;;; ebuild-mode
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/ebuild-mode")
 (autoload 'ebuild-mode "ebuild-mode"
@@ -117,10 +123,6 @@
                . gentoo-newsitem-mode))
 (add-to-list 'interpreter-mode-alist '("runscript" . sh-mode))
 (modify-coding-system-alist 'file "\\.\\(ebuild\\|eclass\\|eblit\\|eselect\\)\\'" 'utf-8)
-
-;;; setting rbenv path
-(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
-(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
 ;;; browser
 ;(setq browse-url-browser-function 'browse-url-generic
