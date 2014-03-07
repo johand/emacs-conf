@@ -49,3 +49,6 @@
 [submodule "emacs.d/rbenv.el"]
 	path = emacs.d/rbenv.el
 	url = git@github.com:senny/rbenv.el.git
+[submodule "emacs.d/web-mode"]
+	path = emacs.d/web-mode
+	url = git@github.com:fxbois/web-mode.git
