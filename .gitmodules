@@ -16,9 +16,6 @@
 [submodule "emacs.d/popup-el"]
 	path = emacs.d/popup-el
 	url = git://github.com/auto-complete/popup-el.git
-[submodule "emacs.d/rhtml"]
-	path = emacs.d/rhtml
-	url = git://github.com/eschulte/rhtml.git
 [submodule "emacs.d/rinari"]
 	path = emacs.d/rinari
 	url = git://github.com/eschulte/rinari.git
