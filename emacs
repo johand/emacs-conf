@@ -52,10 +52,6 @@
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (require 'rinari)
 
-;;; rhtml-mode
-(add-to-list 'load-path "~/.emacs.d/rhtml")
-(require 'rhtml-mode)
-
 ;;; projectile
 (add-to-list 'load-path "~/.emacs.d/projectile")
 (add-to-list 'load-path "~/.emacs.d/dash.el")
@@ -108,6 +104,17 @@
 (setq rbenv-modeline-function 'rbenv--modeline-plain)
 (require 'rbenv)
 (add-hook 'ruby-mode-hook #'(lambda () (global-rbenv-mode)))
+
+;;; web-mode
+(add-to-list 'load-path "~/.emacs.d/web-mode")
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'\" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-hook 'web-mode-hook #'(lambda () (smartparens-mode -1)))
+(setq web-mode-disable-auto-pairing nil)
 
 ;;; ebuild-mode
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/ebuild-mode")
