@@ -114,7 +114,9 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-hook 'web-mode-hook #'(lambda () (smartparens-mode -1)))
-(setq web-mode-disable-auto-pairing nil)
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-tag-auto-close-style 0)
+(setq web-mode-enable-auto-pairing nil)
 
 ;;; ebuild-mode
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/ebuild-mode")
