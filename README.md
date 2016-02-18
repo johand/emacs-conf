@@ -1,16 +1,17 @@
-## Instalacion
+## Installation
 
 
-**clonar repositorio**
+clone
 
     git clone git://github.com/johand/emacs-conf.git
 
-**crear enlaces simbolicos**
+create symlinks
 
-    ln -s emacs-conf/emacs.d ~/.emacs.d
-    ln -s emacs ~/.emacs
+    ln -rs emacs-conf/emacs.d ~/.emacs.d
 
-**instalar y actualizar submodulos**
+before opening emacs install and update submodules
 
     git submodule update --init --recursive
     git submodule foreach git pull origin master
+
+open emacs and wait to finish the packages installation
