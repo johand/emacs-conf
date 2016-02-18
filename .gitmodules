@@ -1,54 +1,9 @@
-[submodule "emacs.d/auto-complete"]
-	path = emacs.d/auto-complete
-	url = git://github.com/auto-complete/auto-complete.git
-[submodule "emacs.d/flymake-php"]
-	path = emacs.d/flymake-php
-	url = git://github.com/purcell/flymake-php.git
-[submodule "emacs.d/flymake-ruby"]
-	path = emacs.d/flymake-ruby
-	url = git://github.com/purcell/flymake-ruby.git
-[submodule "emacs.d/magit"]
-	path = emacs.d/magit
-	url = git://github.com/magit/magit.git
-[submodule "emacs.d/php-mode"]
-	path = emacs.d/php-mode
-	url = git://github.com/ejmr/php-mode.git
-[submodule "emacs.d/popup-el"]
-	path = emacs.d/popup-el
-	url = git://github.com/auto-complete/popup-el.git
-[submodule "emacs.d/rinari"]
-	path = emacs.d/rinari
-	url = git://github.com/eschulte/rinari.git
-[submodule "emacs.d/scss-mode"]
-	path = emacs.d/scss-mode
-	url = git://github.com/antonj/scss-mode.git
 [submodule "emacs.d/themes/zen-and-art-theme"]
 	path = emacs.d/themes/zen-and-art-theme
 	url = git://github.com/johand/zen-and-art-theme.git
-[submodule "emacs.d/twittering-mode"]
-	path = emacs.d/twittering-mode
-	url = git://github.com/hayamiz/twittering-mode.git
-[submodule "emacs.d/yasnippet"]
-	path = emacs.d/yasnippet
-	url = git://github.com/capitaomorte/yasnippet.git
-[submodule "emacs.d/flymake-easy"]
-	path = emacs.d/flymake-easy
-	url = git://github.com/purcell/flymake-easy.git
-[submodule "emacs.d/projectile"]
-	path = emacs.d/projectile
-	url = git://github.com/bbatsov/projectile.git
-[submodule "emacs.d/dash.el"]
-	path = emacs.d/dash.el
-	url = git://github.com/magnars/dash.el.git
-[submodule "emacs.d/s.el"]
-	path = emacs.d/s.el
-	url = git://github.com/magnars/s.el.git
-[submodule "emacs.d/git-modes"]
-	path = emacs.d/git-modes
-	url = git@github.com:magit/git-modes.git
-[submodule "emacs.d/rbenv.el"]
-	path = emacs.d/rbenv.el
-	url = git@github.com:senny/rbenv.el.git
-[submodule "emacs.d/web-mode"]
-	path = emacs.d/web-mode
-	url = git@github.com:fxbois/web-mode.git
+[submodule "emacs.d/site-packages/gnu-social-mode"]
+	path = emacs.d/site-packages/gnu-social-mode
+	url = git://git.savannah.nongnu.org/gnu-social-mode.git
+[submodule "emacs.d/site-packages/dpaste.el"]
+	path = emacs.d/site-packages/dpaste.el
+	url = git@github.com:gregnewman/dpaste.el.git
