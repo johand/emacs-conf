@@ -5,7 +5,7 @@ clone
 
     git clone git://github.com/johand/emacs-conf.git
 
-create symlinks
+create symlink
 
     ln -rs emacs-conf/emacs.d ~/.emacs.d
 
