@@ -114,7 +114,8 @@
 
 ;;; ruby-end
 
-(use-package ruby-end)
+(use-package ruby-end
+  :ensure t)
 
 
 ;;; scss-mode
