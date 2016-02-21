@@ -54,7 +54,7 @@
   :ensure t
   :config
   (require 'helm-config)
-  (helm-mode 1)
+  (add-hook 'ruby-mode-hook #'(lambda () (helm-mode)))
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
   (global-unset-key (kbd "C-x c")))
 
@@ -183,5 +183,6 @@
 (use-package yasnippet
   :ensure t
   :config
-  (setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets"))
-  (yas/global-mode 1))
+  (yas-reload-all)
+  (add-hook 'ruby-mode-hook #'(lambda () (yas-minor-mode)))
+  (setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets")))
