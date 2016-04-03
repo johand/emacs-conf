@@ -43,6 +43,11 @@
 (load theme)
 
 
+;;; no tabs
+
+(setq-default indent-tabs-mode nil)
+
+
 ;;; nodejs path
 
 (setenv "PATH" (concat (getenv "HOME") "/.n/bin:" (getenv "PATH")))
