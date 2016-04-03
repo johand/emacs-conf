@@ -30,12 +30,13 @@
   (global-git-gutter-mode +1))
 
 
-;;; flymake-ruby
+;;; flycheck
 
-(use-package flymake-ruby
+(use-package flycheck
   :ensure t
   :config
-  (add-hook 'ruby-mode-hook 'flymake-ruby-load))
+  (add-hook 'ruby-mode-hook #'global-flycheck-mode)
+  (add-hook 'js-mode-hook #'global-flycheck-mode))
 
 
 ;;; gnusocial
