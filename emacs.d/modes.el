@@ -167,6 +167,9 @@
   (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-hook 'web-mode-hook #'(lambda () (smartparens-mode -1)))
+  (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "brightwhite")
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-auto-closing t))
 
