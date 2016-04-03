@@ -41,3 +41,9 @@
 
 (setq theme (expand-file-name "theme.el" user-emacs-directory))
 (load theme)
+
+
+;;; nodejs path
+
+(setenv "PATH" (concat (getenv "HOME") "/.n/bin:" (getenv "PATH")))
+(setq exec-path (cons (concat (getenv "HOME") "/.n/bin") exec-path))
