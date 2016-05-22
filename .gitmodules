@@ -1,9 +1,9 @@
-[submodule "emacs.d/themes/zen-and-art-theme"]
-	path = emacs.d/themes/zen-and-art-theme
-	url = git://github.com/johand/zen-and-art-theme.git
 [submodule "emacs.d/site-packages/gnu-social-mode"]
 	path = emacs.d/site-packages/gnu-social-mode
 	url = git://git.savannah.nongnu.org/gnu-social-mode.git
 [submodule "emacs.d/site-packages/dpaste.el"]
 	path = emacs.d/site-packages/dpaste.el
 	url = git@github.com:gregnewman/dpaste.el.git
+[submodule "emacs.d/themes/flatland-emacs"]
+	path = emacs.d/themes/flatland-emacs
+	url = git@github.com:gchp/flatland-emacs.git

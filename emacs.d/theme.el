@@ -1,4 +1,4 @@
-(use-package zen-and-art-theme
+(use-package flatland
   :init
-  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zen-and-art-theme")
-  (load-theme 'zen-and-art t))
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/flatland-emacs")
+  (load-theme 'flatland t))
