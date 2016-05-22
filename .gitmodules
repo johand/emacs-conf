@@ -4,3 +4,6 @@
 [submodule "emacs.d/site-packages/dpaste.el"]
 	path = emacs.d/site-packages/dpaste.el
 	url = git@github.com:gregnewman/dpaste.el.git
+[submodule "emacs.d/themes/flatland-emacs"]
+	path = emacs.d/themes/flatland-emacs
+	url = git@github.com:gchp/flatland-emacs.git
