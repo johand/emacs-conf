@@ -1,6 +1,3 @@
-[submodule "emacs.d/themes/zen-and-art-theme"]
-	path = emacs.d/themes/zen-and-art-theme
-	url = git://github.com/johand/zen-and-art-theme.git
 [submodule "emacs.d/site-packages/gnu-social-mode"]
 	path = emacs.d/site-packages/gnu-social-mode
 	url = git://git.savannah.nongnu.org/gnu-social-mode.git
