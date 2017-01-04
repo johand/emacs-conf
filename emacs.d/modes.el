@@ -50,6 +50,12 @@
   (autoload 'gnu-social-mode "gnu-social-mode" nil t))
 
 
+;;; counsel
+
+(use-package counsel
+  :defer t)
+
+
 ;;; ivy
 
 (use-package ivy
