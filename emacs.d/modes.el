@@ -83,6 +83,14 @@
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
 
+;;; multiple-cursors
+
+(use-package multiple-cursors
+  :defer t
+  :bind (("C->" . mc/mark-next-like-this)
+         ("C-S-c C-S-c" . mc/edit-lines)))
+
+
 ;;; projectile
 
 (use-package projectile
