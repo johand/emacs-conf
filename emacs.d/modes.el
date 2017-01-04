@@ -177,4 +177,6 @@
   :config
   (yas-reload-all)
   (add-hook 'ruby-mode-hook #'(lambda () (yas-minor-mode)))
+  (add-hook 'js-mode-hook #'(lambda () (yas-minor-mode)))
+  (add-hook 'web-mode-hook #'(lambda () (yas-minor-mode)))
   (setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets")))
