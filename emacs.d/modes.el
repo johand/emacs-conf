@@ -33,7 +33,10 @@
 (use-package flycheck
   :config
   (add-hook 'ruby-mode-hook #'global-flycheck-mode)
-  (add-hook 'js-mode-hook #'global-flycheck-mode))
+  (add-hook 'js-mode-hook #'global-flycheck-mode)
+  (add-hook 'web-mode-hook #'global-flycheck-mode)
+  (flycheck-add-mode 'html-tidy 'web-mode)
+  (setq flycheck-check-syntax-automatically '(mode-enabled save)))
 
 
 ;;; gnusocial
