@@ -39,6 +39,7 @@
 ;;; gnusocial
 
 (use-package gnu-social-mode
+  :ensure f
   :load-path "site-packages/gnu-social-mode"
   :config
   (setq gnu-social-server "gnusocial.no"
