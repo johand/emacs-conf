@@ -61,6 +61,7 @@
 ;;; ido
 
 (use-package ido
+  :defer t
   :config
   (ido-mode 'both)
   (setq
@@ -108,7 +109,6 @@
   (eval-after-load 'ruby-mode
     '(progn
        (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent))))
-
 
 
 ;;; scss-mode
