@@ -47,16 +47,18 @@
   (autoload 'gnu-social-mode "gnu-social-mode" nil t))
 
 
-;;; helm
+;;; ivy
 
-(use-package helm
-  :ensure t
+(use-package ivy
+  :bind (("C-s" . swiper)
+         ("C-c j" . counsel-git-grep))
   :config
-  (require 'helm-config)
-  (add-hook 'ruby-mode-hook #'(lambda () (helm-mode)))
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  (global-unset-key (kbd "C-x c")))
-
+  (ivy-mode 1)
+  (global-set-key (kbd "C-s")  'swiper)
+  (global-set-key (kbd "C-c j") 'counsel-git-grep)
+  (global-set-key (kbd "C-c k") 'counsel-ag)
+  (global-set-key (kbd "C-x l") 'counsel-locate)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume))
 
 ;;; ido
 
