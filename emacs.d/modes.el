@@ -67,6 +67,8 @@
 
 (use-package ido
   :defer t
+  :bind (("C-x C-f" . ido-find-file)
+         ("C-x b" . ido-switch-buffer))
   :config
   (ido-mode 'both)
   (setq
