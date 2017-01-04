@@ -5,6 +5,7 @@
   (require 'auto-complete-config)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
   (ac-config-default)
+  (add-to-list 'ac-modes 'ruby-mode)
   (add-to-list 'ac-modes 'web-mode)
   (add-to-list 'ac-modes 'haml-mode))
 
