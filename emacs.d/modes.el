@@ -143,6 +143,8 @@
   (progn
     (show-smartparens-global-mode t)))
 
+(add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
+
 (sp-with-modes '(ruby-mode js-mode web-mode)
   (sp-local-pair "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
   (sp-local-pair "[" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
