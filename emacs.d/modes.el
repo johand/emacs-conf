@@ -18,8 +18,7 @@
 
 ;;; dpaste
 
-(use-package dpaste
-  :load-path "site-packages/dpaste.el")
+(use-package dpaste)
 
 
 ;;; emacs-git-gutter
