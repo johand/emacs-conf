@@ -84,6 +84,8 @@
 ;;; projectile
 
 (use-package projectile
+  :defer t
+  :bind ("C-c p p" . projectile-switch-project)
   :config
   (setq projectile-require-project-root nil)
   (add-hook 'ruby-mode-hook #'(lambda () (projectile-mode))))
