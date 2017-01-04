@@ -1,11 +1,11 @@
 ;;; auto-complete
 
 (use-package auto-complete
-  :ensure t
   :config
   (require 'auto-complete-config)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
   (ac-config-default)
+  (add-to-list 'ac-modes 'ruby-mode)
   (add-to-list 'ac-modes 'web-mode)
   (add-to-list 'ac-modes 'haml-mode))
 
@@ -18,14 +18,12 @@
 
 ;;; dpaste
 
-(use-package dpaste
-  :load-path "site-packages/dpaste.el")
+(use-package dpaste)
 
 
 ;;; emacs-git-gutter
 
 (use-package git-gutter
-  :ensure t
   :config
   (global-git-gutter-mode +1))
 
@@ -33,15 +31,18 @@
 ;;; flycheck
 
 (use-package flycheck
-  :ensure t
   :config
   (add-hook 'ruby-mode-hook #'global-flycheck-mode)
-  (add-hook 'js-mode-hook #'global-flycheck-mode))
+  (add-hook 'js-mode-hook #'global-flycheck-mode)
+  (add-hook 'web-mode-hook #'global-flycheck-mode)
+  (flycheck-add-mode 'html-tidy 'web-mode)
+  (setq flycheck-check-syntax-automatically '(mode-enabled save)))
 
 
 ;;; gnusocial
 
 (use-package gnu-social-mode
+  :ensure f
   :load-path "site-packages/gnu-social-mode"
   :config
   (setq gnu-social-server "gnusocial.no"
@@ -49,20 +50,31 @@
   (autoload 'gnu-social-mode "gnu-social-mode" nil t))
 
 
-;;; helm
+;;; counsel
 
-(use-package helm
-  :ensure t
+(use-package counsel
+  :defer t)
+
+
+;;; ivy
+
+(use-package ivy
+  :bind (("C-s" . swiper)
+         ("C-c j" . counsel-git-grep))
   :config
-  (require 'helm-config)
-  (add-hook 'ruby-mode-hook #'(lambda () (helm-mode)))
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  (global-unset-key (kbd "C-x c")))
-
+  (ivy-mode 1)
+  (global-set-key (kbd "C-s")  'swiper)
+  (global-set-key (kbd "C-c j") 'counsel-git-grep)
+  (global-set-key (kbd "C-c k") 'counsel-ag)
+  (global-set-key (kbd "C-x l") 'counsel-locate)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume))
 
 ;;; ido
 
 (use-package ido
+  :defer t
+  :bind (("C-x C-f" . ido-find-file)
+         ("C-x b" . ido-switch-buffer))
   :config
   (ido-mode 'both)
   (setq
@@ -75,7 +87,6 @@
 ;;; markdown-mode
 
 (use-package markdown-mode
-  :ensure t
   :config
   (autoload 'markdown-mode "markdown-mode"
     "Major mode for editing Markdown files" t)
@@ -84,10 +95,19 @@
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
 
+;;; multiple-cursors
+
+(use-package multiple-cursors
+  :defer t
+  :bind (("C->" . mc/mark-next-like-this)
+         ("C-S-c C-S-c" . mc/edit-lines)))
+
+
 ;;; projectile
 
 (use-package projectile
-  :ensure t
+  :defer t
+  :bind ("C-c p p" . projectile-switch-project)
   :config
   (setq projectile-require-project-root nil)
   (add-hook 'ruby-mode-hook #'(lambda () (projectile-mode))))
@@ -96,7 +116,6 @@
 ;;; rbenv.el
 
 (use-package rbenv
-  :ensure t
   :config
   (setq rbenv-modeline-function 'rbenv--modeline-plain)
   (add-hook 'ruby-mode-hook #'(lambda () (global-rbenv-mode))))
@@ -113,16 +132,9 @@
        (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent))))
 
 
-;;; ruby-end
-
-(use-package ruby-end
-  :ensure t)
-
-
 ;;; scss-mode
 
 (use-package scss-mode
-  :ensure t
   :config
   (autoload 'scss-mode "scss-mode")
   (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
@@ -131,25 +143,39 @@
 
 ;;; smartparens
 
-(use-package smartparens
-  :ensure t
+(use-package smartparens-config
+  :ensure smarparens
   :config
-  (smartparens-global-mode t))
+  (progn
+    (show-smartparens-global-mode t)))
+
+(add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
+
+(sp-with-modes '(ruby-mode js-mode web-mode)
+  (sp-local-pair "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
+  (sp-local-pair "[" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
+  (sp-local-pair "(" nil :post-handlers '((my-create-newline-and-enter-sexp "RET"))))
+
+(defun my-create-newline-and-enter-sexp (&rest _ignored)
+  "Open a new brace or bracket expression, with relevant newlines and indent. "
+  (newline)
+  (indent-according-to-mode)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 
 ;;; smex
 
 (use-package smex
-  :ensure t
+  :defer t
+  :bind ("M-x" . smex)
   :config
-  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
-  (global-set-key (kbd "M-x") 'smex))
+  (setq smex-save-file (concat user-emacs-directory ".smex-items")))
 
 
 ;;; twittering-mode
 
 (use-package twittering-mode
-  :ensure t
   :config
   (autoload 'twit "twittering-mode" nil t)
   (setq twittering-icon-mode t)
@@ -159,7 +185,6 @@
 ;;; web-mode
 
 (use-package web-mode
-  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -169,7 +194,8 @@
   (add-hook 'web-mode-hook #'(lambda () (smartparens-mode -1)))
   (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "brightwhite")
   (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-script-padding 4)
+  (setq web-mode-code-indent-offset 4)
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-auto-closing t))
 
@@ -177,7 +203,6 @@
 ;;; yaml-mode
 
 (use-package yaml-mode
-  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 
@@ -185,8 +210,9 @@
 ;;; yasnippet
 
 (use-package yasnippet
-  :ensure t
   :config
   (yas-reload-all)
   (add-hook 'ruby-mode-hook #'(lambda () (yas-minor-mode)))
+  (add-hook 'js-mode-hook #'(lambda () (yas-minor-mode)))
+  (add-hook 'web-mode-hook #'(lambda () (yas-minor-mode)))
   (setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets")))

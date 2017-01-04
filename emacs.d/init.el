@@ -19,16 +19,13 @@
 
 ;;; use-package
 
-(setq package-list '(use-package))
-
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+(if (not (package-installed-p 'use-package))
+    (progn
+      (package-refresh-contents)
+      (package-install 'use-package)))
 
 (require 'use-package)
+(setq use-package-always-ensure t)
 
 
 ;;; modes
