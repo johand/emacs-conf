@@ -1,6 +1,3 @@
 [submodule "emacs.d/site-packages/gnu-social-mode"]
 	path = emacs.d/site-packages/gnu-social-mode
 	url = git://git.savannah.nongnu.org/gnu-social-mode.git
-[submodule "emacs.d/themes/flatland-emacs"]
-	path = emacs.d/themes/flatland-emacs
-	url = git@github.com:gchp/flatland-emacs.git
